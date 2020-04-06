@@ -1,4 +1,4 @@
-# CS736_Assignments
+# CS736 Assignments
 
 Assignment 1: Statistical Shape Analysis
 
