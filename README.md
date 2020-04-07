@@ -4,4 +4,4 @@ Assignment 1: Statistical Shape Analysis
 
 Assignment 2: Image denoising
 
-Assignment 3: Image Reconstruction
+Assignment 3: Imaging and Image Reconstruction
