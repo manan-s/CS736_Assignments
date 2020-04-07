@@ -43,7 +43,7 @@ while ~stop
     prev_loss = loss;
         
     
-    if diff < epsilon && num_iters >= max_iters
+    if diff < epsilon || num_iters >= max_iters
         stop = 1;
     end
     xk(xk<0) = 0;
