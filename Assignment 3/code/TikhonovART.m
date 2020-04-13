@@ -1,5 +1,9 @@
 function [rec_image] = TikhonovART(A, b, max_iters, alpha, lambda, epsilon, img_dim, original_image)
 
+% A modified Kagzmarz update scheme under Tikhonov Regularization, very slow due to individual pixel updates
+% For batchwise update (much faster), replace second term of 'grad' variable assignment in MRF_ART.m file from 
+% MRF_der to alpha*xk after choosing a suitable value of alpha.
+
 stop = 0;
 num_iters = 0;
 
@@ -9,6 +13,7 @@ residual = b - A * xk;              % b - A*x
 norm_ai = full(abs(sum(A.*A,1)));   %||ai||
 col_indices = find(norm_ai>0);
 image_x=original_image(:);          %for RRMSE
+figure('Name', 'Tikhonov Animation');
 
 while ~stop
     
@@ -37,5 +42,6 @@ while ~stop
     end
 end
 
+close;
 rec_image = reshape(x_final, img_dim, img_dim);
 end
